@@ -1,24 +1,13 @@
 import csv
 import os 
 
-# def add_task(file_name):
-#     print("Add task")
-#     # Ask the title of the todo
-#     task_name = input("Enter a todo: ")
-#     task_date = input("Enter the date: ")
-#     # Open file - list.csv
-#     with open(file_name, "a") as f:
-#         writer = csv.writer(f)
-#         # Insert values - title = user entered
-#                       # - completed = False
-#         writer.writerow([task_name, task_date])
 
-def view_task(file_name):
-        print("View Task")
-def modify_task(file_name):
-        print("Modify Task")
-def mark_task(file_name):
-        print("Mark Task")
+# def view_task(file_name):
+#         print("View Task")
+# def modify_task(file_name):
+#         print("Modify Task")
+# def mark_task(file_name):
+#         print("Mark Task")
 
 def delete_task(file_name):
     print("Delete Task")
@@ -70,33 +59,33 @@ add_task("tasks.csv")
 
 
 
-def search_task(file_name):
-        print("Search for a task")
+# def search_task(file_name):
+#         print("Search for a task")
 
 
-# def mark_todo(file_name):
-#     print("Mark todo")
-#     task_name = input("Enter the todo name that you want to mark as complete: ")
-#     task_lists = []
-#     with open(file_name, "r") as f:
-#         reader = csv.reader(f)
-#         for row in reader:
-#             if (task_name != row[0]):
-#                 task_lists.append(row)
-#             else:
-#                 task_lists.append([row[0], "True"])
-#     with open(file_name, "w") as f:
-#         writer = csv.writer(f)
-#         writer.writerows(task_lists)
+# # def mark_todo(file_name):
+# #     print("Mark todo")
+# #     task_name = input("Enter the todo name that you want to mark as complete: ")
+# #     task_lists = []
+# #     with open(file_name, "r") as f:
+# #         reader = csv.reader(f)
+# #         for row in reader:
+# #             if (task_name != row[0]):
+# #                 task_lists.append(row)
+# #             else:
+# #                 task_lists.append([row[0], "True"])
+# #     with open(file_name, "w") as f:
+# #         writer = csv.writer(f)
+# #         writer.writerows(task_lists)
 
-# def view_todo(file_name):
-#     print("View todo")
-#     with open(file_name, "r") as f:
-#         reader = csv.reader(f)
-#         reader.__next__()
-#         for row in reader:
-#             # row = ["Todo 1", "False"]
-#             if (row[1] == "True"):
-#                 print(f"Todo {row[0]} is complete")
-#             else:
-#                 print(f"Todo {row[0]} is not complete")
+# # def view_todo(file_name):
+# #     print("View todo")
+# #     with open(file_name, "r") as f:
+# #         reader = csv.reader(f)
+# #         reader.__next__()
+# #         for row in reader:
+# #             # row = ["Todo 1", "False"]
+# #             if (row[1] == "True"):
+# #                 print(f"Todo {row[0]} is complete")
+# #             else:
+# #                 print(f"Todo {row[0]} is not complete")
