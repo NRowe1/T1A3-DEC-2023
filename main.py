@@ -1,4 +1,5 @@
-from colored import fg, attr, bg 
+from colored import fg, attr, bg   
+# from font_installer import 
 from task_functions import add_task, delete_task, view_task, mark_task, search_task, modify_task
 
 import csv 
