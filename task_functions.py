@@ -92,17 +92,17 @@ def mark_task(file_name):
         writer = csv.writer(f)
         writer.writerows(tasks)
 
-# def search_task(file_name, keyword):
-#     print(f"Search Task for keyword: {keyword}")
-#     with open(file_name, "r") as f:
-#         reader = csv.reader(f)
-#         found_tasks = []
-#         for row in reader:
-#             if row and keyword.lower() in [item.lower() for item in row[1:]]:
-#                 found_tasks.append(row)                
-#         if found_tasks:
-#             print("Found Tasks:")
-#             for task in found_tasks:
-#                 print(task)
-#         else:
-#             print("No tasks found with the given keyword.")
+def search_task(file_name, keyword):
+    print(f"Search Task for keyword: {keyword}")
+    with open(file_name, "r") as f:
+        reader = csv.reader(f)
+        found_tasks = []
+        for row in reader:
+            if row and keyword.lower() in [item.lower() for item in row[1:]]:
+                found_tasks.append(row)                
+        if found_tasks:
+            print("Found Tasks:")
+            for task in found_tasks:
+                print(task)
+        else:
+            print("No tasks found with the given keyword.")
