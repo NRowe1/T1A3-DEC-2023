@@ -3,8 +3,8 @@ import os
 
 def add_task(file_name):
     print("Add Task")
-    task_name = input("Enter the todo name: ")
-    task_date = input("Enter the todo date: ")
+    task_name = input("Enter the task name: ")
+    task_date = input("Enter the task date: ")
 
     # Read existing tasks to determine the next task number
     task_number = 1
@@ -27,7 +27,7 @@ def add_task(file_name):
 
 def delete_task(file_name):
     print("Delete Task")
-    task_name = input("Enter the todo name that you want to remove: ")
+    task_name = input("Enter the task name that you want to remove: ")
     
     # Copy all the contents of the CSV into a new list
     # While doing this, we constantly check for the condition
