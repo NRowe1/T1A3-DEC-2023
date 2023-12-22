@@ -1,3 +1,4 @@
+from colored import fg, attr, bg 
 from task_functions import add_task, delete_task, view_task, mark_task, search_task, modify_task
 
 import csv 
@@ -13,6 +14,8 @@ except FileNotFoundError:
     task_file.write("title,completed\n")
     task_file.close()
     print("In except block")
+
+print(f"{fg('black')}{bg('white')}Your task list{attr('reset')}")
 
 def create_menu():
     print("1. Enter 1 to add task to the list")
@@ -41,8 +44,7 @@ while users_choice != "7":
     elif users_choice == "5":
         delete_task(file_name)
     elif users_choice == "6":
-        search_keyword = input("Enter a keyword to search for tasks: ")
-        search_task(file_name, search_keyword)
+        search_task(file_name)
     elif users_choice == "7":
         continue
     else:

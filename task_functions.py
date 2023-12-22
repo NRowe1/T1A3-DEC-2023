@@ -47,11 +47,50 @@ def delete_task(file_name):
         writer.writerows(task_lists)
 
 def view_task(file_name):
-        print("View Task")
+    print("View todo")
+    with open(file_name, "r") as f:
+        reader = csv.reader(f)
+        reader.__next__()
+        for row in reader:
+            # row = ["Todo 1", "False"]
+            if (row[1] == "True"):
+                print(f"Todo {row[0]} is complete")
+            else:
+                print(f"Todo {row[0]} is not complete")
+
+                
 def modify_task(file_name):
-        print("Modify Task")
+    print("Modify Task")
+    task_name = input("Enter the task name that you want to modify: ")
+
+    tasks = []
+    with open(file_name, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) >= 3 and task_name == row[1]:
+                new_task_name = input("Enter the new task name: ")
+                new_task_date = input("Enter the new task date: ")
+                row[1] = new_task_name
+                row[2] = new_task_date
+            tasks.append(row)
+
+    with open(file_name, "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(tasks)
+
 def mark_task(file_name):
-    print("Mark Task")
+    print("Mark task")
+    task_name = input("Enter the task name that you want to mark as complete: ")
+    tasks = []
+    with open(file_name, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) >= 3 and task_name == row[1]:
+                row[2] = "completed"  # Set to the desired word
+            tasks.append(row)
+    with open(file_name, "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(tasks)
 
 def search_task(file_name, keyword):
     print(f"Search Task for keyword: {keyword}")
