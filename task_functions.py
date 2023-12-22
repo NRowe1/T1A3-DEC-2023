@@ -78,31 +78,31 @@ def modify_task(file_name):
         writer = csv.writer(f)
         writer.writerows(tasks)
 
-def mark_task(file_name):
-    print("Mark task")
-    task_name = input("Enter the task name that you want to mark as complete: ")
-    tasks = []
-    with open(file_name, "r") as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if len(row) >= 3 and task_name == row[1]:
-                row[2] = "completed"  # Set to the desired word
-            tasks.append(row)
-    with open(file_name, "w", newline='') as f:
-        writer = csv.writer(f)
-        writer.writerows(tasks)
+# def mark_task(file_name):
+#     print("Mark task")
+#     task_name = input("Enter the task name that you want to mark as complete: ")
+#     tasks = []
+#     with open(file_name, "r") as f:
+#         reader = csv.reader(f)
+#         for row in reader:
+#             if len(row) >= 3 and task_name == row[1]:
+#                 row[2] = "completed"  # Set to the desired word
+#             tasks.append(row)
+#     with open(file_name, "w", newline='') as f:
+#         writer = csv.writer(f)
+#         writer.writerows(tasks)
 
-def search_task(file_name, keyword):
-    print(f"Search Task for keyword: {keyword}")
-    with open(file_name, "r") as f:
-        reader = csv.reader(f)
-        found_tasks = []
-        for row in reader:
-            if row and keyword.lower() in [item.lower() for item in row[1:]]:
-                found_tasks.append(row)                
-        if found_tasks:
-            print("Found Tasks:")
-            for task in found_tasks:
-                print(task)
-        else:
-            print("No tasks found with the given keyword.")
+# def search_task(file_name, keyword):
+#     print(f"Search Task for keyword: {keyword}")
+#     with open(file_name, "r") as f:
+#         reader = csv.reader(f)
+#         found_tasks = []
+#         for row in reader:
+#             if row and keyword.lower() in [item.lower() for item in row[1:]]:
+#                 found_tasks.append(row)                
+#         if found_tasks:
+#             print("Found Tasks:")
+#             for task in found_tasks:
+#                 print(task)
+#         else:
+#             print("No tasks found with the given keyword.")
