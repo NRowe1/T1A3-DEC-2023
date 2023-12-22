@@ -1,4 +1,6 @@
-from task_functions import add_task, delete_task, mark_task, modify_task, search_task, view_task
+from task_functions import add_task, delete_task, view_task, mark_task, search_task, modify_task
+
+import csv 
 
 file_name = "tasks.csv"
 
@@ -20,7 +22,7 @@ def create_menu():
     print("5. Enter 5 to delete a task")
     print("6. Enter 6 to search for a task in the list")
     print("7. Enter 7 to exit")
- 
+
     choice = input("Enter your selection: ")
     return choice
 
@@ -30,17 +32,18 @@ while users_choice != "7":
     users_choice = create_menu()
     if users_choice == "1":
         add_task(file_name)
-    elif (users_choice == "2"):
+    elif users_choice == "2":
         view_task(file_name)
-    elif (users_choice == "3"):
+    elif users_choice == "3":
         modify_task(file_name)
-    elif (users_choice == "4"):
+    elif users_choice == "4":
         mark_task(file_name)
-    elif (users_choice == "5"):
+    elif users_choice == "5":
         delete_task(file_name)
-    elif (users_choice == "6"):
-        search_task(file_name)
-    elif (users_choice == "7"):
+    elif users_choice == "6":
+        search_keyword = input("Enter a keyword to search for tasks: ")
+        search_task(file_name, search_keyword)
+    elif users_choice == "7":
         continue
     else:
         print("Invalid Input")
