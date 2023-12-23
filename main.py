@@ -1,3 +1,4 @@
+import keyword
 from colored import fg, attr, bg   
 # from font_installer import 
 from task_functions import add_task, delete_task, view_task, mark_task, search_task, modify_task
@@ -45,7 +46,7 @@ while users_choice != "7":
     elif users_choice == "5":
         delete_task(file_name)
     elif users_choice == "6":
-        search_task(file_name)
+        search_task(file_name, keyword)
     elif users_choice == "7":
         continue
     else:

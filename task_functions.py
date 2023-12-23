@@ -47,16 +47,16 @@ def delete_task(file_name):
         writer.writerows(task_lists)
 
 def view_task(file_name):
-    print("View todo")
+    print("View task")
     with open(file_name, "r") as f:
         reader = csv.reader(f)
         reader.__next__()
         for row in reader:
             # row = ["Todo 1", "False"]
-            if (row[1] == "True"):
-                print(f"Todo {row[0]} is complete")
+            if (row[2] == "True"):
+                print(f"Task {row[2]} is complete")
             else:
-                print(f"Todo {row[0]} is not complete")
+                print(f"Task {row[2]} is not complete")
 
                 
 def modify_task(file_name):
@@ -92,6 +92,7 @@ def mark_task(file_name):
         writer = csv.writer(f)
         writer.writerows(tasks)
 
+# Assuming 'your_keyword' is the keyword you want to search for
 def search_task(file_name, keyword):
     print(f"Search Task for keyword: {keyword}")
     with open(file_name, "r") as f:
